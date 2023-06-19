@@ -9,11 +9,11 @@ export default function BlogItem() {
           <img src="https://placehold.jp/3d4070/ffffff/100x100.png" />
         </Figure>
         <BlogItemStyle>
-          <time className="text-xs">2023.5.15</time>
+          <time className="text-xs">日付</time>
           <h3 className="line-clamp-3  font-bold text-sm">
-            【#01】
+            【#00】
             <br />
-            「保護猫カフェ ウリエル」に行ってきました！
+            タイトル
           </h3>
         </BlogItemStyle>
       </BlogArticle>
