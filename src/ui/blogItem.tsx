@@ -30,8 +30,8 @@ const BlogArticle = styled.article`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-  border-bottom: 3px dotted #fff;
-  padding: 12px 12px 8px;
+  border-bottom: 2px dashed #999;
+  padding: 12px;
 `;
 const BlogItemStyle = styled.div`
   width: 260px;
