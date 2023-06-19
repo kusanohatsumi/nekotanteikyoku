@@ -1,9 +1,10 @@
 import BlogItem from "@/ui/blogItem";
+import FirstView from "@/ui/firstview";
 
 export default function Home() {
   return (
     <main className="h-full  my-0 mx-auto ">
-      <h1 className="text-center mb-3">ねこ探偵局</h1>
+      <FirstView />
       <section>
         <h2 className="text-center mb-3">
           ようこそ
