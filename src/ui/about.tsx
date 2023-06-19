@@ -61,6 +61,7 @@ export default function About() {
           alt="お出迎えしゃしゃき"
           width={205}
           height={202}
+          priority={true}
         />
       </AboutSection>
     </>
