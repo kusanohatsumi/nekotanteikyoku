@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 const Ct_title = styled.div`
-  width: 95%;
+  width: 100%;
   height: 100px;
   border-bottom: solid 1px #fff;
   display: flex;
