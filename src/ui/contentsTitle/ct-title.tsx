@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 const Ct_title = styled.div`
-  width: 95%;
+  width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
