@@ -10,13 +10,32 @@ export default function Home() {
       <FirstView />
       <About />
       <section>
-        <Ct_title>
-          <h2>ブログ</h2>
+        <Ct_title className="m-auto border-b border-solid border-white">
+          <h2>ぶろぐ</h2>
           <Ct_BgImg />
         </Ct_title>
         <a href="/">
           <BlogItem />
         </a>
+      </section>
+      <section>
+        <Ct_title>
+          <h2>しゃしん</h2>
+          <Ct_BgImg />
+        </Ct_title>
+      </section>
+      <section>
+        <Ct_title>
+          <h2>ぐっず</h2>
+          <Ct_BgImg />
+        </Ct_title>
+      </section>
+
+      <section>
+        <Ct_title>
+          <h2>にゅーす</h2>
+          <Ct_BgImg />
+        </Ct_title>
       </section>
     </main>
   );
