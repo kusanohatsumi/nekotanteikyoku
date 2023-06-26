@@ -14,7 +14,7 @@ export default function Home() {
         </h2>
       </section>
       <section>
-        <Ct_title className="m-auto pb-4">
+        <Ct_title>
           <h2>{/* ここにコンテンツ名の画像を入れる */}</h2>
           <Ct_BgImg />
         </Ct_title>
