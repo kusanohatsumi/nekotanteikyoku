@@ -1,8 +1,9 @@
 import About from "@/ui/about";
-import BlogItem from "@/ui/blogItem";
 import FirstView from "@/ui/firstview";
 import Ct_BgImg from "@/ui/contentsTitle/ct-bgImg";
 import Ct_title from "@/ui/contentsTitle/ct-title";
+import BlogItem from "@/ui/blogItem";
+import { client } from "@/libs/client";
 
 export default function Home() {
   return (
@@ -14,9 +15,8 @@ export default function Home() {
           <h2>ぶろぐ</h2>
           <Ct_BgImg />
         </Ct_title>
-        <a href="/">
-          <BlogItem />
-        </a>
+        <BlogItem />
+        <a href="/"></a>
       </section>
       <section>
         <Ct_title>

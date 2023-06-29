@@ -1,5 +1,20 @@
 "use client";
 import styled from "styled-components";
+import type { Blog } from "@/types/blog";
+import { client } from "@/libs/client";
+
+export const getStaticProps = async () => {
+  const blog = await client.getList({ endpoint: "blogs" });
+  return {
+    props: {
+      blogs: blog.contents,
+    },
+  };
+};
+
+type props = any & {
+  blogs: Blog[];
+};
 
 const Figure = styled.figure`
   width: 100px;
@@ -21,7 +36,9 @@ const BlogItemStyle = styled.div`
   align-items: flex-start;
 `;
 
-export default function BlogItem() {
+export default function BlogItem({ blogs }: props) {
+  console.log(blogs);
+
   return (
     <>
       <BlogArticle>
