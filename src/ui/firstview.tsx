@@ -16,7 +16,7 @@ const ImageSize = styled.figure`
 export default function FirstView() {
   return (
     <>
-      <Firstvirew className="mb-9 flex flex-col items-center">
+      <Firstvirew className=" flex flex-col items-center">
         <ImageSize>
           <Image
             src="/title.png"

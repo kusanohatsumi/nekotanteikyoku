@@ -12,7 +12,7 @@ const AboutSection = styled.section`
 
 const AboutText = styled.div`
   width: 360px;
-  height: 160px;
+  height: 230px;
   text-align: center;
   border-radius: 5px;
   display: flex;
@@ -21,6 +21,8 @@ const AboutText = styled.div`
   justify-content: center;
   background-color: #fff;
   position: relative;
+  background: url("/serif.png") no-repeat center center;
+  cursor:help;
   &::after {
     content: "";
     display: block;
@@ -47,7 +49,7 @@ const Hand = styled.div`
 export default function About() {
   return (
     <>
-      <AboutSection className="mt-44">
+      <AboutSection>
         <AboutText className="mb-6">
           <p className="text-2xl text-left">
             <span className="text-xl">ようこそ</span>
