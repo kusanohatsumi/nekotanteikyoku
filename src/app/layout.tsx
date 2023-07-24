@@ -1,6 +1,7 @@
 import Header from "@/ui/header";
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
+import { ScriptGa } from "@/lib/gtag";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <head>
+        <ScriptGa />
+      </head>
       <body className={inter.className}>
         <Header />
         {children}
