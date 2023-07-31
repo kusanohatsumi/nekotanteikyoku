@@ -23,7 +23,7 @@ export default function RootLayout({
         <ScriptGa />
       </head>
       <body className={inter.className}>
-        <Header />
+        {/* <Header /> */}
         {children}
       </body>
     </html>

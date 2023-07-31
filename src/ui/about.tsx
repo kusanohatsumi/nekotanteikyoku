@@ -12,7 +12,7 @@ const AboutSection = styled.section`
 
 const AboutText = styled.div`
   width: 360px;
-  height: 160px;
+  height: 230px;
   text-align: center;
   border-radius: 5px;
   display: flex;
@@ -21,6 +21,8 @@ const AboutText = styled.div`
   justify-content: center;
   background-color: #fff;
   position: relative;
+  background: url("/serif.png") no-repeat center center;
+  cursor:help;
   &::after {
     content: "";
     display: block;
@@ -47,14 +49,16 @@ const Hand = styled.div`
 export default function About() {
   return (
     <>
-      <AboutSection className="mt-44">
+      <AboutSection>
         <AboutText className="mb-6">
           <p className="text-2xl text-left">
             <span className="text-xl">ようこそ</span>
             <br />
             <span className="font-bold">ねこ探偵局へ</span>
           </p>
-          <Hand>✊</Hand>
+          {/* <Hand>
+            <Image src="/icon_paw.svg" alt="肉球" width={30} height={30} />
+          </Hand> */}
         </AboutText>
         <Image
           src="/aboutneko.png"
