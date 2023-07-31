@@ -9,6 +9,7 @@ export const ScriptGa = () => {
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
       />
       <Script
+        id="gtag-init"
         defer
         dangerouslySetInnerHTML={{
           __html: `
