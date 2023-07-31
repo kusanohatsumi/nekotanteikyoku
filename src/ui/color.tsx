@@ -1,3 +1,3 @@
 "use client";
 
-export const Bg = "#F8F8F8";
+export const Bg = "#F9F7F2";

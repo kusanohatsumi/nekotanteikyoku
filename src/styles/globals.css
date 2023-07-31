@@ -7,6 +7,11 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: #333;
+  cursor: url("/cathands.svg"), default;
+}
+
+a:hover {
+  cursor: url("/icon_paw--link.svg"), default;
 }
 
 .sns::before,
@@ -19,10 +24,9 @@ body {
   top: -30px;
 }
 .sns::before {
-  outline: solid 3px #fff;
+  border: solid 3px #fff;
   border-radius: 50%;
 }
-
 .note {
   border: solid 3px #6cc39e;
   border-bottom: solid 6px #6cc39e;
@@ -33,7 +37,6 @@ body {
 .note::after {
   background: url("/sns_note.svg") no-repeat center;
 }
-
 .instagram {
   border: solid 3px #b77d48;
   border-bottom: solid 6px #b77d48;
@@ -44,7 +47,6 @@ body {
 .instagram::after {
   background: url("/sns_instagram.svg") no-repeat center;
 }
-
 .twitter {
   border: solid 3px #689ea7;
   border-bottom: solid 6px #689ea7;
@@ -56,7 +58,6 @@ body {
 .twitter::after {
   background: url("/sns_twitter.svg") no-repeat center;
 }
-
 .tiktok {
   border: solid 3px #934449;
   border-bottom: solid 6px #934449;

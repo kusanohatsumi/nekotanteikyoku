@@ -56,7 +56,9 @@ export default function About() {
             <br />
             <span className="font-bold">ねこ探偵局へ</span>
           </p>
-          <Hand>✊</Hand>
+          {/* <Hand>
+            <Image src="/icon_paw.svg" alt="肉球" width={30} height={30} />
+          </Hand> */}
         </AboutText>
         <Image
           src="/aboutneko.png"
