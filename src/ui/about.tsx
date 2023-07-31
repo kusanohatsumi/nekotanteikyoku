@@ -56,17 +56,16 @@ export default function About() {
             <br />
             <span className="font-bold">ねこ探偵局へ</span>
           </p>
-          {/* <Hand>
-            <Image src="/icon_paw.svg" alt="肉球" width={30} height={30} />
-          </Hand> */}
         </AboutText>
-        <Image
-          src="/aboutneko.png"
-          alt="お出迎えしゃしゃき"
-          width={205}
-          height={202}
-          priority={true}
-        />
+        <figure>
+          <Image
+            src="/aboutneko.png"
+            alt="お出迎えしゃしゃき"
+            width={205}
+            height={202}
+            priority={true}
+          />
+        </figure>
       </AboutSection>
     </>
   );
