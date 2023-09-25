@@ -22,6 +22,7 @@ export default function RootLayout({
     <html lang="ja">
       <head>
         <ScriptGa />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
         {/* <Header /> */}
