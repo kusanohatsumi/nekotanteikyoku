@@ -1,16 +1,17 @@
-import { createClient, MicroCMSSchemaInfer } from "microcms-ts-sdk";
+// import { createClient } from "microcms-ts-sdk";
+import { createClient } from "microcms-js-sdk";
 
-export const endpoint = process.env.NEXT_PUBLIC_SERVICE_DOMAIN;
+export const serviceDomain = process.env.NEXT_PUBLIC_SERVICE_DOMAIN;
 export const APIKey = process.env.NEXT_PUBLIC_API_KEY;
 
-if (endpoint === undefined) {
-  throw new Error("error");
+if (serviceDomain === undefined) {
+	throw new Error("error");
 }
 if (APIKey === undefined) {
-  throw new Error("error");
+	throw new Error("error");
 }
 
 export const client = createClient({
-  serviceDomain: endpoint,
-  apiKey: APIKey,
+	serviceDomain: serviceDomain,
+	apiKey: APIKey,
 });
