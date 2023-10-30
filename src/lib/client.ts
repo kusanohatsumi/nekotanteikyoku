@@ -12,6 +12,6 @@ if (APIKey === undefined) {
 }
 
 export const client = createClient({
-	serviceDomain: serviceDomain,
-	apiKey: APIKey,
+	serviceDomain: serviceDomain || "",
+	apiKey: APIKey || "",
 });
