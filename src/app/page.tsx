@@ -13,7 +13,6 @@ const Contents = styled.div`
 	background: ${Bg};
 	margine: 0 auto;
 `;
-
 const List = styled.ul`
 	width: 100%;
 	display: flex;
@@ -45,7 +44,6 @@ const SNS = styled.li`
 		}
 	}
 `;
-
 const Goods = styled.li`
 	display: flex;
 	flex-direction: column;
@@ -73,7 +71,6 @@ const Contact = styled.div`
 	background-position: center;
 	background-size: contain;
 `;
-
 const ContactBtn = styled.div`
 	width: 300px;
 	height: 48px;
@@ -104,18 +101,7 @@ const ContactBtn = styled.div`
 	}
 `;
 
-export const getProps = async () => {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/goods`);
-	if (!res.ok) {
-		throw new Error(res.statusText);
-		// console.log("error");
-	}
-	const data = await res.json();
-	return data.contents;
-};
-
 export default function Home() {
-	// const contents = getProps();
 	// console.log(contents);
 
 	return (

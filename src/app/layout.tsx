@@ -1,4 +1,3 @@
-import Header from "@/ui/header";
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
 import { ScriptGa } from "@/lib/GoogleAnalytics";
