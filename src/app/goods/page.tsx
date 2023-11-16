@@ -1,5 +1,6 @@
-import { getList } from "@/lib/client";
+import { getList, getListDetail } from "@/lib/client";
 import { Goods } from "@/types/blog";
+import Link from "next/link";
 
 export default async function GoodsList() {
 	const { goods } = await getList();
@@ -15,16 +16,18 @@ export default async function GoodsList() {
 							style={{ border: "solid 2px tomato", width: "300px" }}
 							className="flex flex-col items-center"
 						>
-							<h2>{posts.title}</h2>
-							<picture>
-								<img
-									src={posts.eyecatch.url}
-									alt={posts.title}
-									width={300}
-									height={300}
-								/>
-							</picture>
-							<p>{posts.contents}</p>
+							<Link href={`/goods/${posts.id}`}>
+								<h2>{posts.title}</h2>
+								<picture>
+									<img
+										src={posts.eyecatch.url}
+										alt={posts.title}
+										width={300}
+										height={300}
+									/>
+								</picture>
+								<p>{posts.contents}</p>
+							</Link>
 						</div>
 					))}
 				</div>
