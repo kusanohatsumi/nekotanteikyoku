@@ -4,13 +4,13 @@ import Link from "next/link";
 
 export default async function GoodsList() {
 	const { goods } = await getList();
-	const goodsITem: Goods[] = goods.contents;
+	const goodsItem: Goods[] = goods.contents;
 	return (
 		<>
 			<div className="list">
 				<h1>グッズ一覧</h1>
 				<div className="flex flex-wrap ">
-					{goodsITem.map((posts) => (
+					{goodsItem.map((posts) => (
 						<div
 							key={posts.id}
 							style={{ border: "solid 2px tomato", width: "300px" }}
