@@ -1,4 +1,6 @@
 "use client";
+import { getList } from "@/lib/client";
+import { Goods } from "@/types/blog";
 
 import Link from "next/link";
 
@@ -9,6 +11,10 @@ export default async function GoodsItems({
 }) {
 	const goodsImg = "/goods.png";
 	const price = 1000;
+
+	const { goods } = await getList();
+	// const goodsItem: Goods[] = goods.contents;
+	console.log(goods);
 
 	return (
 		<>

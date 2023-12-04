@@ -19,13 +19,18 @@ export async function getList() {
 	const blogs = await client.getList({ endpoint: "blogs" });
 	const goods = await client.getList({ endpoint: "goods" });
 	return {
-		blogs,
-		goods,
+		props: {
+			blog: blogs.contents,
+			goods: goods.contents,
+		},
 	};
 }
 export async function getListDetail(contentId: string) {
 	const blogItem = await client.getListDetail({ endpoint: "blogs", contentId });
-
+	const goodsItem = await client.getListDetail({
+		endpoint: "goods",
+		contentId,
+	});
 	return {
 		blogItem,
 	};

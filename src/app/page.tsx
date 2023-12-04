@@ -6,13 +6,15 @@ import styled from "styled-components";
 import { Bg } from "@/ui/color";
 import { Ct_title } from "@/ui/contentsTitle/ct-title";
 import Image from "next/image";
-import { APIKey, client } from "@/lib/client";
+import { client } from "@/lib/client";
+import Link from "next/link";
 
 const Contents = styled.div`
 	width: 370px;
 	background: ${Bg};
 	margine: 0 auto;
 `;
+
 const List = styled.ul`
 	width: 100%;
 	display: flex;
@@ -101,118 +103,135 @@ const ContactBtn = styled.div`
 	}
 `;
 
-export default function Home() {
-	// console.log(contents);
+export default async function Home() {
+	const data = await client.getList({
+		endpoint: "goods",
+		queries: { limit: 4 },
+	});
+	const item = data.contents;
 
 	return (
 		<>
-			<main className="h-full w-full ">
-				<FirstView />
-				<Contents className="m-auto py-44 ">
-					<About />
-					{/* SNS */}
-					<section className="my-8">
-						<Ct_title className="m-auto">
-							<h2>
-								<Image
-									src="/title_sns.png"
-									alt="sns"
-									width={83}
-									height={35}
-									style={{ width: "auto" }}
-								/>
-							</h2>
-							<Ct_BgImg />
-						</Ct_title>
-						<List>
-							<SNS className="sns note">
-								<a href="https://note.com/nice_daisy154" target="_blank">
-									<h3>note</h3>
-									<p>
-										ブログを投稿
-										<br />
-										しています
-									</p>
-								</a>
-							</SNS>
-							<SNS className="sns instagram">
-								<a
-									href="https://www.instagram.com/nekotanteikyoku/"
-									target="_blank"
-								>
-									<h3>instagram</h3>
-									<p>ここに各SNSの説明を表示</p>
-								</a>
-							</SNS>
-							<SNS className="sns twitter">
-								<a href="https://twitter.com/home?lang=ja" target="_blank">
-									<h3>twitter</h3>
-									<p>ここに各SNSの説明を表示</p>
-								</a>
-							</SNS>
-							<SNS className="sns tiktok">
-								<a href="#">
-									<h3>tiktok</h3>
-									<p>ここに各SNSの説明を表示</p>
-								</a>
-							</SNS>
-						</List>
-					</section>
-					{/* --- */}
-					{/* グッズ */}
-					<section className="my-8">
-						<Ct_title className="m-auto">
-							<h2>
-								<Image
-									src="/title_goods.png"
-									alt="sns"
-									width={83}
-									height={35}
-								/>
-							</h2>
-							<Ct_BgImg />
-						</Ct_title>
-						<List>
-							<Goods className="m-2"></Goods>
-							<Goods className="m-2"></Goods>
-							<Goods className="m-2"></Goods>
-							<Goods className="m-2"></Goods>
-						</List>
-						<More className="m-auto">もっとみる</More>
-					</section>
-					{/* --- */}
-					<Contact>
-						<figure className="px-6 my-6 flex justify-between">
+			<FirstView />
+			<Contents className="m-auto py-44 ">
+				<About />
+				{/* SNS */}
+				<section className="my-8">
+					<Ct_title className="m-auto">
+						<h2>
 							<Image
-								src="/title_contact.png"
-								alt="お問合せ"
-								width={200}
-								height={40}
+								src="/title_sns.png"
+								alt="sns"
+								width={83}
+								height={35}
+								style={{ width: "auto" }}
 							/>
-							<Image src="/stamp.svg" alt="スタンプ" width={115} height={35} />
-						</figure>
-						<p className="px-6 leading-9">
-							ご質問やおすすめの猫スポットを募集しています。また、グッズやチラシ等のご依頼もお待ちしております！
-						</p>
-						<ContactBtn>
-							<a
-								href="mailto:nekotanteikyoku@gmail.com"
-								className="w-full h-full flex items-center justify-center"
-								style={{ color: "#6B8970" }}
-							>
-								<Image
-									src="/icon_mail.svg"
-									alt="mailIcon"
-									width={20}
-									height={20}
-								/>
-								nekotanteikyoku@gmail.com
+						</h2>
+						<Ct_BgImg />
+					</Ct_title>
+					<List>
+						<SNS className="sns note">
+							<a href="https://note.com/nice_daisy154" target="_blank">
+								<h3>note</h3>
+								<p>
+									ブログを投稿
+									<br />
+									しています
+								</p>
 							</a>
-						</ContactBtn>
-					</Contact>
-					{/* <footer className="text-center">©nekotanteikyoku</footer> */}
-				</Contents>
-			</main>
+						</SNS>
+						<SNS className="sns instagram">
+							<a
+								href="https://www.instagram.com/nekotanteikyoku/"
+								target="_blank"
+							>
+								<h3>instagram</h3>
+								<p>ここに各SNSの説明を表示</p>
+							</a>
+						</SNS>
+						<SNS className="sns twitter">
+							<a href="https://twitter.com/home?lang=ja" target="_blank">
+								<h3>twitter</h3>
+								<p>ここに各SNSの説明を表示</p>
+							</a>
+						</SNS>
+						<SNS className="sns tiktok">
+							<a href="#">
+								<h3>tiktok</h3>
+								<p>ここに各SNSの説明を表示</p>
+							</a>
+						</SNS>
+					</List>
+				</section>
+				{/* --- */}
+				{/* グッズ */}
+				<section className="my-8">
+					<Ct_title className="m-auto">
+						<h2>
+							<Image
+								src="/title_goods.png"
+								alt="sns"
+								// width={83}
+								// height={35}
+								// style={{ height: "auto" }}
+								width="0"
+								height="0"
+								sizes="100vw"
+								style={{ width: "100%", height: "auto" }}
+							/>
+						</h2>
+						<Ct_BgImg />
+					</Ct_title>
+					<List>
+						{item.map((goods) => (
+							<Goods className="m-2" key={goods.id}>
+								<Image
+									src={goods.eyecatch.url}
+									alt={goods.title}
+									width="0"
+									height="0"
+									sizes="90vw"
+									style={{ width: "70%", height: "auto" }}
+								/>
+							</Goods>
+						))}
+					</List>
+					<Link href="/goods">
+						<More className="m-auto">もっとみる</More>
+					</Link>
+				</section>
+				{/* --- */}
+				<Contact>
+					<figure className="px-6 my-6 flex justify-between">
+						<Image
+							src="/title_contact.png"
+							alt="お問合せ"
+							width={200}
+							height={40}
+						/>
+						<Image src="/stamp.svg" alt="スタンプ" width={115} height={35} />
+					</figure>
+					<p className="px-6 leading-9">
+						ご質問やおすすめの猫スポットを募集しています。また、グッズやチラシ等のご依頼もお待ちしております！
+					</p>
+					<ContactBtn>
+						<a
+							href="mailto:nekotanteikyoku@gmail.com"
+							className="w-full h-full flex items-center justify-center"
+							style={{ color: "#6B8970" }}
+						>
+							<Image
+								src="/icon_mail.svg"
+								alt="mailIcon"
+								width={20}
+								height={20}
+							/>
+							nekotanteikyoku@gmail.com
+						</a>
+					</ContactBtn>
+				</Contact>
+				{/* <footer className="text-center">©nekotanteikyoku</footer> */}
+			</Contents>
 		</>
 	);
 }
