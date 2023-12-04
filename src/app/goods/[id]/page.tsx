@@ -14,7 +14,6 @@ export default async function GoodsItems({
 
 	const goods = await getList();
 	// const goodsItem: Goods[] = goods.contents;
-	console.log(goods);
 
 	return (
 		<>
