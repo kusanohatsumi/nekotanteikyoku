@@ -12,7 +12,7 @@ export default async function GoodsItems({
 	const goodsImg = "/goods.png";
 	const price = 1000;
 
-	const { goods } = await getList();
+	const goods = await getList();
 	// const goodsItem: Goods[] = goods.contents;
 	console.log(goods);
 
