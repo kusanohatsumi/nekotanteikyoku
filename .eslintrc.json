@@ -7,6 +7,7 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/eslint-plugin",
 		"next/core-web-vitals"
 	],
 	"parser": "@typescript-eslint/parser",
@@ -15,6 +16,6 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"plugins": ["prettier"],
+	"plugins": ["@typescript-eslint", "prettier"],
 	"rules": {}
 }
