@@ -1,7 +1,6 @@
-import Header from "@/ui/header";
+import { ScriptGa } from "@/lib/Gtag";
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
-import { ScriptGa } from "@/lib/gtag";
 
 const inter = Inter({ subsets: ["latin"] });
 
