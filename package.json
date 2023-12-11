@@ -27,7 +27,6 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/gtag.js": "^0.0.18",
     "babel-plugin-styled-components": "^2.1.4"
   }
 }

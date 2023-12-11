@@ -121,7 +121,7 @@ export default function Home() {
             </Ct_title>
             <List>
               <SNS className="sns note">
-                <a href="https://note.com/nice_daisy154" target="_blank">
+                <a href="/">
                   <h3>note</h3>
                   <p>
                     ブログを投稿
@@ -146,7 +146,7 @@ export default function Home() {
                 </a>
               </SNS>
               <SNS className="sns tiktok">
-                <a href="#">
+                <a href="/">
                   <h3>tiktok</h3>
                   <p>ここに各SNSの説明を表示</p>
                 </a>

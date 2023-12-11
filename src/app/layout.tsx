@@ -1,6 +1,7 @@
+import Header from "@/ui/header";
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { ScriptGa } from "@/lib/gtag";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -8,6 +9,8 @@ export const metadata = {
   title: "猫探偵局",
   description:
     "関西を中心に猫カフェ・野良猫スポットを探索し、ブログやSNSで発信する【猫好きの猫好きによる猫好きのためのメディア】です",
+  name: "google-site-verification",
+  content: "yfBq0_xc_ZQ3gZL2hpxXc3jo1rfBhdEjUM3_xXPaMs0",
 };
 
 export default function RootLayout({
@@ -18,13 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <GoogleAnalytics />
-        <meta
-          name="google-site-verification"
-          content="yfBq0_xc_ZQ3gZL2hpxXc3jo1rfBhdEjUM3_xXPaMs0"
-        />
-
-        <link rel="icon" href="/favicon.ico" />
+        <ScriptGa />
       </head>
       <body className={inter.className}>
         {/* <Header /> */}
