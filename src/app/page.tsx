@@ -1,28 +1,27 @@
 "use client";
 import About from "@/ui/about";
+import BlogItem from "@/ui/blogItem";
 import FirstView from "@/ui/firstview";
 import Ct_BgImg from "@/ui/contentsTitle/ct-bgImg";
 import styled from "styled-components";
 import { Bg } from "@/ui/color";
 import { Ct_title } from "@/ui/contentsTitle/ct-title";
 import Image from "next/image";
-import { APIKey, client } from "@/lib/client";
 
 const Contents = styled.div`
-	width: 370px;
-	background: ${Bg};
-	margine: 0 auto;
+  width: 370px;
+  background: ${Bg};
+  margine: 0 auto;
 `;
 
 const List = styled.ul`
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 28px 8px 8px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 28px 8px 8px;
 `;
 const SNS = styled.li`
-
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -45,79 +44,67 @@ const SNS = styled.li`
       margin: auto;
     }
   }
-
 `;
 
 const Goods = styled.li`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 45%;
-	height: 125px;
-	border-radius: 6px;
-	ここに各snsの説明を表示-align: center;
-	border: solid 2px #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  height: 125px;
+  border-radius: 6px;
+  ここに各snsの説明を表示-align: center;
+  border: solid 2px #333;
 `;
 const More = styled.div`
-	width: 120px;
-	height: 43px;
-	line-height: 43px;
-	text-align: center;
-	border: solid 1px #333;
+  width: 120px;
+  height: 43px;
+  line-height: 43px;
+  text-align: center;
+  border: solid 1px #333;
 `;
 const Contact = styled.div`
-	width: 95%;
-	height: 427px;
-	margin: 0 auto;
-	padding: 24px 0;
-	background-image: url("/contact_bg.svg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
+  width: 95%;
+  height: 427px;
+  margin: 0 auto;
+  padding: 24px 0;
+  background-image: url("/contact_bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 `;
 
 const ContactBtn = styled.div`
-	width: 300px;
-	height: 48px;
-	line-height: 48px;
-	text-align: center;
-	background: #fff;
-	border: solid 1px #333;
-	position: relative;
-	margin: 12px auto;
-	&::before,
-	::after {
-		content: "";
-		display: block;
-		background: #333;
-		position: absolute;
-	}
-	&::before {
-		width: 1px;
-		height: 42px;
-		bottom: -3px;
-		right: -8px;
-	}
-	&::after {
-		width: 280px;
-		height: 1px;
-		right: -3px;
-		bottom: -8px;
-	}
+  width: 300px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  background: #fff;
+  border: solid 1px #333;
+  position: relative;
+  margin: 12px auto;
+  &::before,
+  ::after {
+    content: "";
+    display: block;
+    background: #333;
+    position: absolute;
+  }
+  &::before {
+    width: 1px;
+    height: 42px;
+    bottom: -3px;
+    right: -8px;
+  }
+  &::after {
+    width: 280px;
+    height: 1px;
+    right: -3px;
+    bottom: -8px;
+  }
 `;
 
-export const getProps = async () => {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/goods`);
-	if (!res.ok) {
-		throw new Error(res.statusText);
-		// console.log("error");
-	}
-	const data = await res.json();
-	return data.contents;
-};
-
 export default function Home() {
-
   return (
     <>
       <main className="h-full w-full ">
@@ -223,5 +210,4 @@ export default function Home() {
       </main>
     </>
   );
-
 }

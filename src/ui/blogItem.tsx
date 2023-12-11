@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import styled from "styled-components";
 
 const Figure = styled.figure`
@@ -26,7 +27,12 @@ export default function BlogItem() {
     <>
       <BlogArticle>
         <Figure>
-          <img src="https://placehold.jp/3d4070/ffffff/100x100.png" />
+          <Image
+            alt="ダミー"
+            width={100}
+            height={100}
+            src="https://placehold.jp/3d4070/ffffff/100x100.png"
+          />
         </Figure>
         <BlogItemStyle>
           <time className="text-xs">日付</time>
