@@ -1,6 +1,6 @@
-import { ScriptGa } from "@/lib/Gtag";
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <ScriptGa />
+        <GoogleAnalytics />
         <meta
           name="google-site-verification"
           content="yfBq0_xc_ZQ3gZL2hpxXc3jo1rfBhdEjUM3_xXPaMs0"
