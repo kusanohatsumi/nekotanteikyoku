@@ -33,13 +33,11 @@ const SNS = styled.li`
   position: relative;
   a {
     display: block;
-    padding-top: 28px;
     width: 100%;
     height: 100%;
     text-align: center;
-
     h3 {
-      margin-bottom: 4px;
+      margin: 24px 0 4px;
     }
     p {
       width: 126px;
@@ -123,7 +121,7 @@ export default function Home() {
             </Ct_title>
             <List>
               <SNS className="sns note">
-                <a href="/">
+                <a href="https://note.com/nice_daisy154" target="_blank">
                   <h3>note</h3>
                   <p>
                     ブログを投稿
@@ -133,19 +131,22 @@ export default function Home() {
                 </a>
               </SNS>
               <SNS className="sns instagram">
-                <a href="/">
+                <a
+                  href="https://www.instagram.com/nekotanteikyoku/"
+                  target="_blank"
+                >
                   <h3>instagram</h3>
                   <p>ここに各SNSの説明を表示</p>
                 </a>
               </SNS>
               <SNS className="sns twitter">
-                <a href="/">
+                <a href="https://twitter.com/home?lang=ja" target="_blank">
                   <h3>twitter</h3>
                   <p>ここに各SNSの説明を表示</p>
                 </a>
               </SNS>
               <SNS className="sns tiktok">
-                <a href="/">
+                <a href="#">
                   <h3>tiktok</h3>
                   <p>ここに各SNSの説明を表示</p>
                 </a>
