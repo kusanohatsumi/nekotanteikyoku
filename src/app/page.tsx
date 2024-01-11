@@ -104,7 +104,7 @@ const ContactBtn = styled.div`
 	}
 `;
 
-export default async function Home() {
+export default function Home() {
 	return (
 		<>
 			<main className="h-full w-full ">
