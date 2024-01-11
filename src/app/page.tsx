@@ -6,14 +6,12 @@ import styled from "styled-components";
 import { Bg } from "@/ui/color";
 import { Ct_title } from "@/ui/contentsTitle/ct-title";
 import Image from "next/image";
-import { client } from "@/lib/client";
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 const Contents = styled.div`
 	width: 370px;
 	background: ${Bg};
-	margine: 0 auto;
+	margin: 0 auto;
 `;
 
 const List = styled.ul`
