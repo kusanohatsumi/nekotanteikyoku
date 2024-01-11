@@ -6,7 +6,9 @@ import styled from "styled-components";
 import { Bg } from "@/ui/color";
 import { Ct_title } from "@/ui/contentsTitle/ct-title";
 import Image from "next/image";
-import { APIKey, client } from "@/lib/client";
+import { client } from "@/lib/client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Contents = styled.div`
 	width: 370px;
@@ -104,20 +106,7 @@ const ContactBtn = styled.div`
 	}
 `;
 
-export const getProps = async () => {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/goods`);
-	if (!res.ok) {
-		throw new Error(res.statusText);
-		// console.log("error");
-	}
-	const data = await res.json();
-	return data.contents;
-};
-
-export default function Home() {
-	// const contents = getProps();
-	// console.log(contents);
-
+export default async function Home() {
 	return (
 		<>
 			<main className="h-full w-full ">
@@ -192,7 +181,9 @@ export default function Home() {
 							<Goods className="m-2"></Goods>
 							<Goods className="m-2"></Goods>
 						</List>
-						<More className="m-auto">もっとみる</More>
+						<Link href="/goods">
+							<More className="m-auto">もっとみる</More>
+						</Link>
 					</section>
 					{/* --- */}
 					<Contact>
