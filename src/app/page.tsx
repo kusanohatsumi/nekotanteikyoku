@@ -181,7 +181,7 @@ export default async function Home() {
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
-							{item.map((goods) => (
+							{/* {item.map((goods) => (
 								<Goods className="m-2" key={goods.id}>
 									<Image
 										src={goods.eyecatch.url}
@@ -192,11 +192,11 @@ export default async function Home() {
 										style={{ width: "70%", height: "auto" }}
 									/>
 								</Goods>
-							))}
+							))} */}
 						</List>
-						<Link href="/goods">
-							<More className="m-auto">もっとみる</More>
-						</Link>
+						<More className="m-auto">
+							<Link href="/goods">もっとみる </Link>
+						</More>
 					</section>
 					{/* --- */}
 					<Contact>
