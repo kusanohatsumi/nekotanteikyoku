@@ -2,7 +2,17 @@
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import { GA_ID, pageview } from "./gtag";
+
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+export const existsGaId = GA_ID !== "";
+
+export const pageview = (path: string) => {
+	if (existsGaId && window.gtag) {
+		window.gtag("config", GA_ID, {
+			page_path: path,
+		});
+	}
+};
 
 export const ScriptGa = () => {
 	const pathnema = usePathname();

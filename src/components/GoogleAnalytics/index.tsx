@@ -1,6 +1,6 @@
 "use client";
 
-import { GA_ID, existsGaId, pageview } from "@/lib/gtag";
+import { GA_ID, existsGaId, pageview } from "@/lib/GoogleAnalytics";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
