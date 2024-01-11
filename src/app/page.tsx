@@ -105,12 +105,12 @@ const ContactBtn = styled.div`
 	}
 `;
 
-export default async function Home() {
-	const { contents } = await getGoodsList();
+export default function Home() {
+	// const { contents } = await getGoodsList();
 
-	if (!contents || contents.length === 0) {
-		return <h1>No contents</h1>;
-	}
+	// if (!contents || contents.length === 0) {
+	// 	return <h1>No contents</h1>;
+	// }
 
 	return (
 		<>
@@ -178,7 +178,7 @@ export default async function Home() {
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
-							{contents.map((goods) => (
+							{/* {contents.map((goods) => (
 								<Goods className="m-2" key={goods.id}>
 									<Image
 										src={goods.eyecatch.url}
@@ -189,7 +189,7 @@ export default async function Home() {
 										style={{ width: "70%", height: "auto" }}
 									/>
 								</Goods>
-							))}
+							))} */}
 						</List>
 						<More className="m-auto">
 							<Link href="/goods">もっとみる </Link>
