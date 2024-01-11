@@ -107,11 +107,6 @@ const ContactBtn = styled.div`
 `;
 
 export default async function Home() {
-	const data = await client.getList({
-		endpoint: "goods",
-		queries: { limit: 4 },
-	});
-	const item = data.contents;
 	return (
 		<>
 			<main className="h-full w-full ">
