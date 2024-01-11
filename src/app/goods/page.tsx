@@ -1,5 +1,5 @@
 "use client";
-import { client } from "@/lib/client";
+import { client } from "@/lib/microcms";
 import { Blog, Goods } from "@/types/blog";
 import { MicroCMSQueries } from "microcms-js-sdk";
 import Image from "next/image";
