@@ -108,10 +108,10 @@ export default async function Home() {
 	return (
 		<>
 			<main className="h-full w-full ">
-				<FirstView />
+				Top
+				{/* <FirstView />
 				<Contents className="m-auto py-44 ">
 					<About />
-					{/* SNS */}
 					<section className="my-8">
 						<Ct_title className="m-auto">
 							<h2>
@@ -159,8 +159,6 @@ export default async function Home() {
 							</SNS>
 						</List>
 					</section>
-					{/* --- */}
-					{/* グッズ */}
 					<section className="my-8">
 						<Ct_title className="m-auto">
 							<h2>
@@ -174,7 +172,7 @@ export default async function Home() {
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
-							{/* {item.map((goods) => (
+							{item.map((goods) => (
 								<Goods className="m-2" key={goods.id}>
 									<Image
 										src={goods.eyecatch.url}
@@ -185,13 +183,12 @@ export default async function Home() {
 										style={{ width: "70%", height: "auto" }}
 									/>
 								</Goods>
-							))} */}
+							))}
 						</List>
 						<More className="m-auto">
 							<Link href="/goods">もっとみる </Link>
 						</More>
 					</section>
-					{/* --- */}
 					<Contact>
 						<figure className="px-6 my-6 flex justify-between">
 							<Image
@@ -221,8 +218,8 @@ export default async function Home() {
 							</Link>
 						</ContactBtn>
 					</Contact>
-					{/* <footer className="text-center">©nekotanteikyoku</footer> */}
-				</Contents>
+					<footer className="text-center">©nekotanteikyoku</footer>
+				</Contents> */}
 			</main>
 		</>
 	);
