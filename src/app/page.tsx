@@ -1,14 +1,12 @@
 "use client";
 import About from "@/ui/about";
+import BlogItem from "@/ui/blogItem";
 import FirstView from "@/ui/firstview";
 import Ct_BgImg from "@/ui/contentsTitle/ct-bgImg";
 import styled from "styled-components";
 import { Bg } from "@/ui/color";
 import { Ct_title } from "@/ui/contentsTitle/ct-title";
 import Image from "next/image";
-import { client } from "@/lib/client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
 
 const Contents = styled.div`
 	width: 370px;
@@ -106,12 +104,7 @@ const ContactBtn = styled.div`
 	}
 `;
 
-export default async function Home() {
-	const data = await client.getList({
-		endpoint: "goods",
-		queries: { limit: 4 },
-	});
-	const item = data.contents;
+export default function Home() {
 	return (
 		<>
 			<main className="h-full w-full ">
@@ -122,19 +115,13 @@ export default async function Home() {
 					<section className="my-8">
 						<Ct_title className="m-auto">
 							<h2>
-								<Image
-									src="/title_sns.png"
-									alt="sns"
-									width={83}
-									height={35}
-									style={{ width: "auto" }}
-								/>
+								<Image src="/title_sns.png" alt="sns" width={83} height={35} />
 							</h2>
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
 							<SNS className="sns note">
-								<a href="https://note.com/nice_daisy154" target="_blank">
+								<a href="/">
 									<h3>note</h3>
 									<p>
 										ブログを投稿
@@ -159,7 +146,7 @@ export default async function Home() {
 								</a>
 							</SNS>
 							<SNS className="sns tiktok">
-								<a href="#">
+								<a href="/">
 									<h3>tiktok</h3>
 									<p>ここに各SNSの説明を表示</p>
 								</a>
@@ -181,22 +168,12 @@ export default async function Home() {
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
-							{item.map((goods) => (
-								<Goods className="m-2" key={goods.id}>
-									<Image
-										src={goods.eyecatch.url}
-										alt={goods.title}
-										width="0"
-										height="0"
-										sizes="90vw"
-										style={{ width: "70%", height: "auto" }}
-									/>
-								</Goods>
-							))}
+							<Goods className="m-2"></Goods>
+							<Goods className="m-2"></Goods>
+							<Goods className="m-2"></Goods>
+							<Goods className="m-2"></Goods>
 						</List>
-						<Link href="/goods">
-							<More className="m-auto">もっとみる</More>
-						</Link>
+						<More className="m-auto">もっとみる</More>
 					</section>
 					{/* --- */}
 					<Contact>

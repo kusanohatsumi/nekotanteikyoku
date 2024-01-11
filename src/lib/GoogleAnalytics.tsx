@@ -2,7 +2,7 @@
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import { GA_ID, pageview } from "./gtag";
+import { GA_ID, pageview } from "./Gtag";
 
 export const ScriptGa = () => {
 	const pathnema = usePathname();

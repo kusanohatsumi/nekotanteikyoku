@@ -24,7 +24,6 @@ export default function RootLayout({
 					name="google-site-verification"
 					content="yfBq0_xc_ZQ3gZL2hpxXc3jo1rfBhdEjUM3_xXPaMs0"
 				/>
-				<link rel="icon" href="/favicon.ico" />
 			</head>
 			<body className={inter.className}>
 				{/* <Header /> */}
