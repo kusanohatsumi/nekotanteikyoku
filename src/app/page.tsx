@@ -107,6 +107,11 @@ const ContactBtn = styled.div`
 `;
 
 export default async function Home() {
+	const data = await client.getList({
+		endpoint: "goods",
+		queries: { limit: 4 },
+	});
+	const item = data.contents;
 	return (
 		<>
 			<main className="h-full w-full ">
@@ -176,10 +181,18 @@ export default async function Home() {
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
-							<Goods className="m-2"></Goods>
-							<Goods className="m-2"></Goods>
-							<Goods className="m-2"></Goods>
-							<Goods className="m-2"></Goods>
+							{item.map((goods) => (
+								<Goods className="m-2" key={goods.id}>
+									<Image
+										src={goods.eyecatch.url}
+										alt={goods.title}
+										width="0"
+										height="0"
+										sizes="90vw"
+										style={{ width: "70%", height: "auto" }}
+									/>
+								</Goods>
+							))}
 						</List>
 						<Link href="/goods">
 							<More className="m-auto">もっとみる</More>
