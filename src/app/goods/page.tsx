@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-export default async function Home() {
+const GoodsList = async () => {
 	const { contents } = await getGoodsList();
 
 	if (!contents || contents.length === 0) {
@@ -59,4 +59,6 @@ export default async function Home() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default GoodsList;
