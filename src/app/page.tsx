@@ -127,35 +127,35 @@ export default async function Home() {
 						</Ct_title>
 						<List>
 							<SNS className="sns note">
-								<a href="https://note.com/nice_daisy154" target="_blank">
+								<Link href="https://note.com/nice_daisy154" target="_blank">
 									<h3>note</h3>
 									<p>
 										ブログを投稿
 										<br />
 										しています
 									</p>
-								</a>
+								</Link>
 							</SNS>
 							<SNS className="sns instagram">
-								<a
+								<Link
 									href="https://www.instagram.com/nekotanteikyoku/"
 									target="_blank"
 								>
 									<h3>instagram</h3>
 									<p>ここに各SNSの説明を表示</p>
-								</a>
+								</Link>
 							</SNS>
 							<SNS className="sns twitter">
-								<a href="https://twitter.com/home?lang=ja" target="_blank">
+								<Link href="https://twitter.com/home?lang=ja" target="_blank">
 									<h3>twitter</h3>
 									<p>ここに各SNSの説明を表示</p>
-								</a>
+								</Link>
 							</SNS>
 							<SNS className="sns tiktok">
-								<a href="#">
+								<Link href="#">
 									<h3>tiktok</h3>
 									<p>ここに各SNSの説明を表示</p>
-								</a>
+								</Link>
 							</SNS>
 						</List>
 					</section>
@@ -206,7 +206,7 @@ export default async function Home() {
 							ご質問やおすすめの猫スポットを募集しています。また、グッズやチラシ等のご依頼もお待ちしております！
 						</p>
 						<ContactBtn>
-							<a
+							<Link
 								href="mailto:nekotanteikyoku@gmail.com"
 								className="w-full h-full flex items-center justify-center"
 								style={{ color: "#6B8970" }}
@@ -218,7 +218,7 @@ export default async function Home() {
 									height={20}
 								/>
 								nekotanteikyoku@gmail.com
-							</a>
+							</Link>
 						</ContactBtn>
 					</Contact>
 					{/* <footer className="text-center">©nekotanteikyoku</footer> */}
