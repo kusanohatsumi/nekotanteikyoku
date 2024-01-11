@@ -40,6 +40,27 @@ export const getList = async (queries?: MicroCMSQueries) => {
 	return listData;
 };
 
+//グッズの型定義
+export type Goods = {
+	id: string;
+	title: string;
+	contents: string;
+	eyecatch: { url: string; height: number; width: number };
+	category: {
+		id: string;
+		name: string;
+		createdAt: string;
+		updatedAt: string;
+		publishedAt: string;
+		revisedAt: string;
+	};
+	price: number;
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+	revisedAt: string;
+} & MicroCMSDate;
+
 // ブログの詳細を取得
 export const getDetail = async (
 	contentId: string,
@@ -47,6 +68,35 @@ export const getDetail = async (
 ) => {
 	const detailData = await client.getListDetail<Blog>({
 		endpoint: "blogs",
+		contentId,
+		queries,
+	});
+
+	// データの取得が目視しやすいよう明示的に遅延効果を追加
+	await new Promise((resolve) => setTimeout(resolve, 3000));
+
+	return detailData;
+};
+
+// グッズ一覧を取得
+export const getGoodsList = async (queries?: MicroCMSQueries) => {
+	const listData = await client.getList<Goods>({
+		endpoint: "goods",
+		queries,
+	});
+
+	// データの取得が目視しやすいよう明示的に遅延効果を追加
+	await new Promise((resolve) => setTimeout(resolve, 3000));
+
+	return listData;
+};
+// グッズの詳細を取得
+export const getGoodsDetail = async (
+	contentId: string,
+	queries?: MicroCMSQueries
+) => {
+	const detailData = await client.getListDetail<Goods>({
+		endpoint: "goods",
 		contentId,
 		queries,
 	});

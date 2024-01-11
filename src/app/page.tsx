@@ -7,6 +7,7 @@ import { Bg } from "@/ui/color";
 import { Ct_title } from "@/ui/contentsTitle/ct-title";
 import Image from "next/image";
 import Link from "next/link";
+import { getGoodsList } from "@/lib/microcms";
 
 const Contents = styled.div`
 	width: 370px;
@@ -104,7 +105,13 @@ const ContactBtn = styled.div`
 	}
 `;
 
-export default function Home() {
+export default async function Home() {
+	const { contents } = await getGoodsList();
+
+	if (!contents || contents.length === 0) {
+		return <h1>No contents</h1>;
+	}
+
 	return (
 		<>
 			<main className="h-full w-full ">
@@ -171,7 +178,7 @@ export default function Home() {
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
-							{/* {item.map((goods) => (
+							{contents.map((goods) => (
 								<Goods className="m-2" key={goods.id}>
 									<Image
 										src={goods.eyecatch.url}
@@ -182,7 +189,7 @@ export default function Home() {
 										style={{ width: "70%", height: "auto" }}
 									/>
 								</Goods>
-							))} */}
+							))}
 						</List>
 						<More className="m-auto">
 							<Link href="/goods">もっとみる </Link>

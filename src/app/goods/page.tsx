@@ -1,28 +1,17 @@
 "use client";
-import { client } from "@/lib/microcms";
+import { getGoodsList } from "@/lib/microcms";
 import { Blog, Goods } from "@/types/blog";
 import { MicroCMSQueries } from "microcms-js-sdk";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-export default function Home() {
-	// const [items, setItems] = useState<any[]>([]);
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		try {
-	// 			const data = await client.getList({
-	// 				endpoint: "goods",
-	// 				queries: { limit: 4 },
-	// 			});
-	// 			const contents: any[] = data.contents;
-	// 			setItems(contents);
-	// 		} catch (error) {
-	// 			console.error(error);
-	// 		}
-	// 	};
-	// 	fetchData();
-	// }, [items]);
+export default async function Home() {
+	const { contents } = await getGoodsList();
+
+	if (!contents || contents.length === 0) {
+		return <h1>No contents</h1>;
+	}
 
 	return (
 		<div
@@ -41,7 +30,7 @@ export default function Home() {
 			</Link>
 
 			<div className="py-7 flex flex-wrap justify-between gap-2">
-				{/* {items.map((item, i) => (
+				{contents.map((item, i) => (
 					<div className="w-2/5 flex-grow h-auto m-2" key={i}>
 						<div
 							className="flex items-center justify-center p-4  rounded-lg bg-slate-50"
@@ -66,7 +55,7 @@ export default function Home() {
 							<div>{item.price.toLocaleString()}円</div>
 						</div>
 					</div>
-				))} */}
+				))}
 			</div>
 		</div>
 	);
