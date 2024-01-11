@@ -170,7 +170,20 @@ export default function Home() {
 							</h2>
 							<Ct_BgImg />
 						</Ct_title>
-						<List></List>
+						<List>
+							{/* {item.map((goods) => (
+								<Goods className="m-2" key={goods.id}>
+									<Image
+										src={goods.eyecatch.url}
+										alt={goods.title}
+										width="0"
+										height="0"
+										sizes="90vw"
+										style={{ width: "70%", height: "auto" }}
+									/>
+								</Goods>
+							))} */}
+						</List>
 						<More className="m-auto">
 							<Link href="/goods">もっとみる </Link>
 						</More>
