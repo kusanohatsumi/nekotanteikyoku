@@ -105,12 +105,13 @@ const ContactBtn = styled.div`
 	}
 `;
 const Home = async () => {
-	const { contents } = await getGoodsList();
-	if (!contents || contents.length === 0) {
-		return <h1>No contents</h1>;
-	}
+	// const { contents } = await getGoodsList();
+	// if (!contents || contents.length === 0) {
+	// 	return <h1>No contents</h1>;
+	// }
 	return (
 		<>
+			<Link href="/static">Static</Link>
 			<main className="h-full w-full ">
 				<FirstView />
 				<Contents className="m-auto py-44 ">
@@ -175,7 +176,7 @@ const Home = async () => {
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
-							{contents.map((goods) => (
+							{/* {contents.map((goods) => (
 								<Goods className="m-2" key={goods.id}>
 									<Image
 										src={goods.eyecatch.url}
@@ -186,7 +187,7 @@ const Home = async () => {
 										style={{ width: "70%", height: "auto" }}
 									/>
 								</Goods>
-							))}
+							))} */}
 						</List>
 						<More className="m-auto">
 							<Link href="/goods">もっとみる </Link>
