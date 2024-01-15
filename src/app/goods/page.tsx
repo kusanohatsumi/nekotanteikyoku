@@ -1,6 +1,6 @@
 "use client";
 import { getGoodsList } from "@/lib/microcms";
-import { Blog, Goods } from "@/types/blog";
+import { Blog } from "@/types/blog";
 import { MicroCMSQueries } from "microcms-js-sdk";
 import Image from "next/image";
 import Link from "next/link";
