@@ -7,11 +7,12 @@ body {
 	font-family: "Roboto", sans-serif;
 	font-size: 16px;
 	color: #333;
-	cursor: url("/cathands.svg"), default;
+	cursor: url("/images/cathands.svg"), default;
 }
 
-a:hover {
-	cursor: url("/icon_paw--link.svg"), default;
+a {
+	display: block;
+	cursor: url("/images/icon_paw--link.svg"), default;
 }
 
 .sns::before,
