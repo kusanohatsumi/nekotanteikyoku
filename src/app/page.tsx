@@ -1,20 +1,21 @@
 "use client";
 import About from "@/ui/about";
-import FirstView from "@/ui/firstview";
-import Ct_BgImg from "@/ui/contentsTitle/ct-bgImg";
 import styled from "styled-components";
-import { Bg } from "@/ui/color";
-import { Ct_title } from "@/ui/contentsTitle/ct-title";
 import Image from "next/image";
 import Link from "next/link";
-import { getGoodsList } from "@/lib/microcms";
+// ---
+import FirstView from "@/ui/firstview";
+import Ct_BgImg from "@/ui/contentsTitle/ct-bgImg";
+import { Bg } from "@/ui/color";
+import { Ct_title } from "@/ui/contentsTitle/ct-title";
+import { getMicrocms } from "@/lib/getMicrocms";
+import { GoodsList } from "@/components/goods";
 
 const Contents = styled.div`
 	width: 370px;
 	background: ${Bg};
 	margin: 0 auto;
 `;
-
 const List = styled.ul`
 	width: 100%;
 	display: flex;
@@ -46,7 +47,6 @@ const SNS = styled.li`
 		}
 	}
 `;
-
 const Goods = styled.li`
 	display: flex;
 	flex-direction: column;
@@ -74,7 +74,6 @@ const Contact = styled.div`
 	background-position: center;
 	background-size: contain;
 `;
-
 const ContactBtn = styled.div`
 	width: 300px;
 	height: 48px;
@@ -105,13 +104,10 @@ const ContactBtn = styled.div`
 	}
 `;
 const Home = async () => {
-	// const { contents } = await getGoodsList();
-	// if (!contents || contents.length === 0) {
-	// 	return <h1>No contents</h1>;
-	// }
+	const data = await getMicrocms("goods");
+
 	return (
 		<>
-			<Link href="/static">Static</Link>
 			<main className="h-full w-full ">
 				<FirstView />
 				<Contents className="m-auto py-44 ">
@@ -176,18 +172,7 @@ const Home = async () => {
 							<Ct_BgImg />
 						</Ct_title>
 						<List>
-							{/* {contents.map((goods) => (
-								<Goods className="m-2" key={goods.id}>
-									<Image
-										src={goods.eyecatch.url}
-										alt={goods.title}
-										width="0"
-										height="0"
-										sizes="90vw"
-										style={{ width: "70%", height: "auto" }}
-									/>
-								</Goods>
-							))} */}
+							<GoodsList data={data} />
 						</List>
 						<More className="m-auto">
 							<Link href="/goods">もっとみる </Link>
