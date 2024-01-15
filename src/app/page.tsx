@@ -1,8 +1,8 @@
 "use client";
+import { cache } from "react";
 import About from "@/ui/about";
 import styled from "styled-components";
 import Image from "next/image";
-import Link from "next/link";
 // ---
 import FirstView from "@/ui/firstview";
 import Ct_BgImg from "@/ui/contentsTitle/ct-bgImg";
@@ -10,6 +10,7 @@ import { Bg } from "@/ui/color";
 import { Ct_title } from "@/ui/contentsTitle/ct-title";
 import { getMicrocms } from "@/lib/getMicrocms";
 import { GoodsList } from "@/components/goods";
+import Link from "next/link";
 
 const Contents = styled.div`
 	width: 370px;
@@ -104,12 +105,10 @@ const ContactBtn = styled.div`
 	}
 `;
 const Home = async () => {
-	const data = await getMicrocms("goods");
-
 	return (
 		<>
-			<main className="h-full w-full ">
-				<FirstView />
+			<Link href="/static">Static</Link>
+			{/* <FirstView />
 				<Contents className="m-auto py-44 ">
 					<About />
 					<section className="my-8">
@@ -171,9 +170,7 @@ const Home = async () => {
 							</h2>
 							<Ct_BgImg />
 						</Ct_title>
-						<List>
-							<GoodsList data={data} />
-						</List>
+						<List><GoodsList data={data} /></List>
 						<More className="m-auto">
 							<Link href="/goods">もっとみる </Link>
 						</More>
@@ -208,8 +205,7 @@ const Home = async () => {
 						</ContactBtn>
 					</Contact>
 					<footer className="text-center">©nekotanteikyoku</footer>
-				</Contents>
-			</main>
+				</Contents> */}
 		</>
 	);
 };
