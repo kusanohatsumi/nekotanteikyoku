@@ -1,119 +1,114 @@
 "use client";
+import { cache } from "react";
 import About from "@/ui/about";
-import BlogItem from "@/ui/blogItem";
+import styled from "styled-components";
+import Image from "next/image";
+// ---
 import FirstView from "@/ui/firstview";
 import Ct_BgImg from "@/ui/contentsTitle/ct-bgImg";
-import styled from "styled-components";
 import { Bg } from "@/ui/color";
 import { Ct_title } from "@/ui/contentsTitle/ct-title";
-import Image from "next/image";
+import { getMicrocms } from "@/lib/getMicrocms";
+import { GoodsList } from "@/components/goods";
 import Link from "next/link";
-import { getGoodsList } from "@/lib/microcms";
 
 const Contents = styled.div`
 	width: 370px;
 	background: ${Bg};
 	margin: 0 auto;
 `;
-
 const List = styled.ul`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 28px 8px 8px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 28px 8px 8px;
 `;
 const SNS = styled.li`
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 43%;
-  height: 125px;
-  border-radius: 6px;
-  margin: 8px 8px 32px;
-  position: relative;
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    h3 {
-      margin: 24px 0 4px;
-    }
-    p {
-      width: 126px;
-      margin: auto;
-    }
-  }
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 43%;
+	height: 125px;
+	border-radius: 6px;
+	margin: 8px 8px 32px;
+	position: relative;
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		h3 {
+			margin: 24px 0 4px;
+		}
+		p {
+			width: 126px;
+			margin: auto;
+		}
+	}
 `;
-
 const Goods = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 45%;
-  height: 125px;
-  border-radius: 6px;
-  ここに各snsの説明を表示-align: center;
-  border: solid 2px #333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 45%;
+	height: 125px;
+	border-radius: 6px;
+	ここに各snsの説明を表示-align: center;
+	border: solid 2px #333;
 `;
 const More = styled.div`
-  width: 120px;
-  height: 43px;
-  line-height: 43px;
-  text-align: center;
-  border: solid 1px #333;
+	width: 120px;
+	height: 43px;
+	line-height: 43px;
+	text-align: center;
+	border: solid 1px #333;
 `;
 const Contact = styled.div`
-  width: 95%;
-  height: 427px;
-  margin: 0 auto;
-  padding: 24px 0;
-  background-image: url("/contact_bg.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+	width: 95%;
+	height: 427px;
+	margin: 0 auto;
+	padding: 24px 0;
+	background-image: url("/contact_bg.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 `;
-
 const ContactBtn = styled.div`
-  width: 300px;
-  height: 48px;
-  line-height: 48px;
-  text-align: center;
-  background: #fff;
-  border: solid 1px #333;
-  position: relative;
-  margin: 12px auto;
-  &::before,
-  ::after {
-    content: "";
-    display: block;
-    background: #333;
-    position: absolute;
-  }
-  &::before {
-    width: 1px;
-    height: 42px;
-    bottom: -3px;
-    right: -8px;
-  }
-  &::after {
-    width: 280px;
-    height: 1px;
-    right: -3px;
-    bottom: -8px;
-  }
+	width: 300px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	background: #fff;
+	border: solid 1px #333;
+	position: relative;
+	margin: 12px auto;
+	&::before,
+	::after {
+		content: "";
+		display: block;
+		background: #333;
+		position: absolute;
+	}
+	&::before {
+		width: 1px;
+		height: 42px;
+		bottom: -3px;
+		right: -8px;
+	}
+	&::after {
+		width: 280px;
+		height: 1px;
+		right: -3px;
+		bottom: -8px;
+	}
 `;
 const Home = async () => {
-	const { contents } = await getGoodsList();
-	if (!contents || contents.length === 0) {
-		return <h1>No contents</h1>;
-	}
 	return (
 		<>
-			<main className="h-full w-full ">
-				<FirstView />
+			<Link href="/static">Static</Link>
+			{/* <FirstView />
 				<Contents className="m-auto py-44 ">
 					<About />
 					<section className="my-8">
@@ -175,20 +170,7 @@ const Home = async () => {
 							</h2>
 							<Ct_BgImg />
 						</Ct_title>
-						<List>
-							{contents.map((goods) => (
-								<Goods className="m-2" key={goods.id}>
-									<Image
-										src={goods.eyecatch.url}
-										alt={goods.title}
-										width="0"
-										height="0"
-										sizes="90vw"
-										style={{ width: "70%", height: "auto" }}
-									/>
-								</Goods>
-							))}
-						</List>
+						<List><GoodsList data={data} /></List>
 						<More className="m-auto">
 							<Link href="/goods">もっとみる </Link>
 						</More>
@@ -223,8 +205,7 @@ const Home = async () => {
 						</ContactBtn>
 					</Contact>
 					<footer className="text-center">©nekotanteikyoku</footer>
-				</Contents>
-			</main>
+				</Contents> */}
 		</>
 	);
 };

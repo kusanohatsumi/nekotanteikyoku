@@ -26,20 +26,6 @@ export const client = createClient({
 	serviceDomain: process.env.NEXT_PUBLIC_SERVICE_DOMAIN,
 	apiKey: process.env.NEXT_PUBLIC_API_KEY,
 });
-
-// ブログ一覧を取得
-export const getList = async (queries?: MicroCMSQueries) => {
-	const listData = await client.getList<Blog>({
-		endpoint: "blogs",
-		queries,
-	});
-
-	// データの取得が目視しやすいよう明示的に遅延効果を追加
-	await new Promise((resolve) => setTimeout(resolve, 3000));
-
-	return listData;
-};
-
 //グッズの型定義
 export type Goods = {
 	id: string;
@@ -61,6 +47,18 @@ export type Goods = {
 	revisedAt: string;
 } & MicroCMSDate;
 
+// ブログ一覧を取得
+export const getList = async (queries?: MicroCMSQueries) => {
+	const listData = await client.getList<Blog>({
+		endpoint: "blogs",
+		queries,
+	});
+
+	// データの取得が目視しやすいよう明示的に遅延効果を追加
+	await new Promise((resolve) => setTimeout(resolve, 3000));
+
+	return listData;
+};
 // ブログの詳細を取得
 export const getDetail = async (
 	contentId: string,

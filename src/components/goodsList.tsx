@@ -17,23 +17,23 @@ async function Goods() {
 	return { contents };
 }
 
-export async function GoodsList() {
-	const contents = await Goods();
-	console.log(contents);
-	return (
-		<List>
-			{/* {contents.map((goods:any) => (
-            <Goods className="m-2" key={goods.id}>
-                <Image
-                    src={goods.eyecatch.url}
-                    alt={goods.title}
-                    width="0"
-                    height="0"
-                    sizes="90vw"
-                    style={{ width: "70%", height: "auto" }}
-                />
-            </Goods>
-        ))} */}
-		</List>
-	);
-}
+// export async function GoodsList() {
+// 	const contents = await Goods();
+// 	console.log(contents);
+// 	return (
+// 		<List>
+// 			{/* {contents.map((goods:any) => (
+//             <Goods className="m-2" key={goods.id}>
+//                 <Image
+//                     src={goods.eyecatch.url}
+//                     alt={goods.title}
+//                     width="0"
+//                     height="0"
+//                     sizes="90vw"
+//                     style={{ width: "70%", height: "auto" }}
+//                 />
+//             </Goods>
+//         ))} */}
+// 		</List>
+// 	);
+// }
