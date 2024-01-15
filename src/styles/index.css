@@ -1,0 +1,14 @@
+.firstview {
+	width: 100%;
+	height: 700px;
+	border: solid 1px #333;
+	background: #cfe9f3;
+}
+.firstview > figure {
+	width: 310px;
+	height: auto;
+}
+.firstview > figure > img {
+	width: 100%;
+	height: auto;
+}

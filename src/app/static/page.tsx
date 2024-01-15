@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { client, getList } from "@/lib/microcms";
-import { createClient } from "microcms-js-sdk";
+import { client } from "@/lib/microcms";
 
 export const revalidate = 0;
 

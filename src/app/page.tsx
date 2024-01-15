@@ -1,16 +1,7 @@
 "use client";
-import { cache } from "react";
-import About from "@/ui/about";
-import styled from "styled-components";
-import Image from "next/image";
-// ---
-import FirstView from "@/ui/firstview";
-import Ct_BgImg from "@/ui/contentsTitle/ct-bgImg";
-import { Bg } from "@/ui/color";
-import { Ct_title } from "@/ui/contentsTitle/ct-title";
-import { getMicrocms } from "@/lib/getMicrocms";
-import { GoodsList } from "@/components/goods";
+import "../styles/index.css";
 import Link from "next/link";
+import Image from "next/image";
 import { client } from "@/lib/microcms";
 
 async function getContents() {
@@ -28,6 +19,29 @@ export default async function Home() {
 	const contents = await getContents();
 	return (
 		<>
+			<div className="firstview relative  flex flex-col items-center">
+				<figure>
+					<Image
+						src="/images/title.png"
+						alt="しゃしゃき"
+						width={0}
+						height={0}
+						sizes="100vw"
+						className="relative top-56 "
+						priority={true}
+					/>
+				</figure>
+				<figure>
+					<Image
+						src="/images/firstviewneko.png"
+						alt="しゃしゃき"
+						width={0}
+						height={0}
+						sizes="100vw"
+						priority={false}
+					/>
+				</figure>
+			</div>
 			<Link href="/static">Static</Link>
 			<ul>
 				{contents.map((item) => {
