@@ -104,7 +104,6 @@ const Home = async () => {
 	return (
 		<>
 			<div>{}</div>
-
 			<FirstView />
 			<Contents className="m-auto py-44 ">
 				<About />
@@ -148,7 +147,7 @@ const Home = async () => {
 							</Link>
 						</SNS>
 						<SNS className="sns tiktok">
-							<Link href="#">
+							<Link href="/">
 								<h3>tiktok</h3>
 								<p>ここに各SNSの説明を表示</p>
 							</Link>
