@@ -89,9 +89,14 @@ export default async function Home() {
 				<div className="goods contentsItem">
 					<section>
 						<h2 className="title">
-							<Image src="/title_goods.png" alt="sns" width={83} height={35} />
 							<Image
-								src="/section_title.png"
+								src="/images/title_goods.png"
+								alt="sns"
+								width={83}
+								height={35}
+							/>
+							<Image
+								src="/images/section_title.png"
 								alt="見出し装飾"
 								width={250}
 								height={60}
