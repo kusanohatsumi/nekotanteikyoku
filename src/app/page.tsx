@@ -106,11 +106,9 @@ const ContactBtn = styled.div`
 `;
 const Home = async () => {
 	const { contents } = await getGoodsList();
-
 	if (!contents || contents.length === 0) {
 		return <h1>No contents</h1>;
 	}
-
 	return (
 		<>
 			<main className="h-full w-full ">
@@ -229,5 +227,4 @@ const Home = async () => {
 		</>
 	);
 };
-
 export default Home;
