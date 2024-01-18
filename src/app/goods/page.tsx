@@ -6,6 +6,7 @@ import React from "react";
 
 const GoodsList = async () => {
 	const { contents } = await getGoodsList();
+	console.log(contents);
 
 	if (!contents || contents.length === 0) {
 		return <h1>No contents</h1>;

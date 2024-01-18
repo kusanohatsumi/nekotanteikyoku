@@ -1,25 +1,12 @@
-// static/[postId]/page.tsx
-
 import "../../../styles/goodsdetail.css";
 import { notFound } from "next/navigation";
-import { getGoodsDetail, getList } from "@/lib/microcms";
+import { getGoodsDetail } from "@/lib/microcms";
 import Image from "next/image";
 import Link from "next/link";
 
-export async function generateStaticParams() {
-	const { contents } = await getList();
-
-	const paths = contents.map((post) => {
-		return {
-			postId: post.id,
-		};
-	});
-
-	return [...paths];
-}
-
 export default async function DetailPage({ params }: { params: any }) {
 	const post = await getGoodsDetail(params.id);
+	console.log(post);
 
 	if (!post) {
 		notFound();
@@ -66,24 +53,26 @@ export default async function DetailPage({ params }: { params: any }) {
 						</div>
 					</div>
 				</div>
-				<div className="btn">
-					<Link
-						href={`${post.url}`}
-						className="w-full h-full flex items-center justify-center"
-						style={{ color: "#fff" }}
-					>
-						<Image
-							src="/images/cart.svg"
-							alt="mailIcon"
-							width={0}
-							height={0}
-							sizes="100vw"
-							style={{ width: "20px", height: "20px" }}
-						/>
-						この商品を購入する
-					</Link>
-					<p className="text-sm m-3">SUZURIのサイトへ移動します</p>
-				</div>
+				{post.url && (
+					<div className="btn">
+						<Link
+							href={`${post.url}`}
+							className="w-full h-full flex items-center justify-center"
+							style={{ color: "#fff" }}
+						>
+							<Image
+								src="/images/cart.svg"
+								alt="mailIcon"
+								width={0}
+								height={0}
+								sizes="100vw"
+								style={{ width: "20px", height: "20px" }}
+							/>
+							この商品を購入する
+						</Link>
+						<p className="text-sm m-3">SUZURIのサイトへ移動します</p>
+					</div>
+				)}
 			</div>
 		</>
 	);
