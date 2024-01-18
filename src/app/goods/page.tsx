@@ -22,8 +22,8 @@ const GoodsList = async () => {
 				<Image
 					src="/back.png"
 					alt="戻る"
-					width={100} // 任意の適切な値を指定
-					height={100} // 任意の適切な値を指定
+					width={100}
+					height={100}
 					sizes="100vw"
 					style={{ width: "100px", height: "auto" }}
 				/>
@@ -43,8 +43,8 @@ const GoodsList = async () => {
 							<Image
 								src={`${item.eyecatch.url}`}
 								alt={item.title}
-								width={100} // 任意の適切な値を指定
-								height={100} // 任意の適切な値を指定
+								width={100}
+								height={100}
 								sizes="100vw"
 								style={{ width: "100px", height: "auto" }}
 								className="bg-slate-100"
