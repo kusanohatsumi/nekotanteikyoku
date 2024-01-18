@@ -20,7 +20,6 @@ export async function generateStaticParams() {
 
 export default async function DetailPage({ params }: { params: any }) {
 	const post = await getGoodsDetail(params.id);
-	console.log(post);
 
 	if (!post) {
 		notFound();
