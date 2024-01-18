@@ -31,14 +31,16 @@ export default async function DetailPage({ params }: { params: any }) {
 				className="detailtem m-auto h-screen border px-2 py-6"
 				style={{ width: "390px", backgroundColor: "#F9F7F2" }}
 			>
-				<Image
-					src="/images/back.png"
-					alt="戻る"
-					width={0}
-					height={0}
-					sizes="100vw"
-					style={{ width: "100px", height: "auto" }}
-				/>
+				<Link href="/goods">
+					<Image
+						src="/images/back.png"
+						alt="戻る"
+						width={100}
+						height={100}
+						sizes="100vw"
+						style={{ width: "100px", height: "auto" }}
+					/>
+				</Link>
 				<div className="py-7 flex flex-wrap justify-between gap-2">
 					<div className="w-2/5 flex-grow h-auto m-2">
 						<div
