@@ -1,3 +1,4 @@
+import { Goods } from "@/types/goods";
 import { createClient } from "microcms-js-sdk";
 import type {
 	MicroCMSQueries,
@@ -27,25 +28,6 @@ export const client = createClient({
 	apiKey: process.env.NEXT_PUBLIC_API_KEY,
 });
 //グッズの型定義
-export type Goods = {
-	id: string;
-	title: string;
-	contents: string;
-	eyecatch: { url: string; height: number; width: number };
-	category: {
-		id: string;
-		name: string;
-		createdAt: string;
-		updatedAt: string;
-		publishedAt: string;
-		revisedAt: string;
-	};
-	price: number;
-	createdAt: string;
-	updatedAt: string;
-	publishedAt: string;
-	revisedAt: string;
-} & MicroCMSDate;
 
 // ブログ一覧を取得
 export const getList = async (queries?: MicroCMSQueries) => {
