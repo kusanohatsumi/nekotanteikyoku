@@ -12,6 +12,7 @@ export interface Goods {
 		revisedAt: string;
 	};
 	price: number;
+	url: string;
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;

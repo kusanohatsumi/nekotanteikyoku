@@ -4,6 +4,13 @@ module.exports = {
 		styledComponents: true,
 	},
 	images: {
-		domains: ["images.microcms-assets.io"],
+		domains: [
+			"images.microcms-assets.io",
+			"https://",
+			"note.com",
+			"www.instagram.com",
+			"twitter.com",
+			"#",
+		],
 	},
 };
