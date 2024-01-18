@@ -2,6 +2,7 @@ export interface Goods {
 	id: string;
 	title: string;
 	contents: string;
+	url: string;
 	eyecatch: { url: string; height: number; width: number };
 	category: {
 		id: string;
@@ -12,7 +13,6 @@ export interface Goods {
 		revisedAt: string;
 	};
 	price: number;
-	url: string;
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;

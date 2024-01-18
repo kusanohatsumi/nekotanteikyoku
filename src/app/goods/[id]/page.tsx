@@ -1,3 +1,4 @@
+"use client";
 import "../../../styles/goodsdetail.css";
 import { notFound } from "next/navigation";
 import { getGoodsDetail } from "@/lib/microcms";
@@ -7,6 +8,7 @@ import Link from "next/link";
 export default async function DetailPage({ params }: { params: any }) {
 	const post = await getGoodsDetail(params.id);
 	console.log(post);
+	console.log(post.url);
 
 	if (!post) {
 		notFound();
