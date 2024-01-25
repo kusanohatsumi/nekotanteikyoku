@@ -14,3 +14,19 @@ a {
 	display: block;
 	cursor: url("/images/icon_paw--link.svg"), default;
 }
+
+.Logo {
+	animation: Logo 3s linear infinite;
+}
+
+@keyframes Logo {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

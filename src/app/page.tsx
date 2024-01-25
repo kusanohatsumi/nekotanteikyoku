@@ -27,7 +27,6 @@ export default async function Home() {
 	const contents = await getContents();
 	return (
 		<>
-			{/* ファーストビュー */}
 			<div className="firstview w-full relative  flex flex-col items-center">
 				<figure>
 					<Image
@@ -52,7 +51,6 @@ export default async function Home() {
 				</figure>
 			</div>
 			<div className="container">
-				{/* 導入 */}
 				<div className="about contentsItem">
 					<div className="text">
 						<p>
@@ -73,7 +71,6 @@ export default async function Home() {
 						/>
 					</figure>
 				</div>
-				{/* SNS */}
 				<div className="sns contentsItem">
 					<section>
 						<h2 className="title">
@@ -107,7 +104,6 @@ export default async function Home() {
 						</ul>
 					</section>
 				</div>
-				{/* グッズ一覧 */}
 				<div className="goods contentsItem">
 					<section>
 						<h2 className="title">
@@ -167,7 +163,6 @@ export default async function Home() {
 						</Link>
 					</div>
 				</div>
-				{/* お問い合わせ */}
 				<div className="contact contentsItem">
 					<figure className="px-6 my-6 flex justify-between">
 						<Image
