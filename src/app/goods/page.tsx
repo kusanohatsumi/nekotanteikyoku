@@ -14,7 +14,7 @@ const GoodsList = async () => {
 	return (
 		<div
 			className="m-auto h-screen border px-2 py-6"
-			style={{ width: "390px", backgroundColor: "#F9F7F2" }}
+			style={{ width: "390px", height: "100%", backgroundColor: "#F9F7F2" }}
 		>
 			<Link href="/">
 				<Image
