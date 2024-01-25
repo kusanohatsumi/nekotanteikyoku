@@ -219,6 +219,7 @@ async function getContents() {
 			cache: "no-store",
 		},
 		endpoint: "goods",
+		queries: { limit: 4 },
 	});
 	return response.contents;
 }
