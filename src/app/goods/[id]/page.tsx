@@ -30,10 +30,9 @@ export default async function DetailPage({ params }: { params: any }) {
 				<div className="py-7 flex flex-wrap justify-between gap-2">
 					<div className="w-2/5 flex-grow h-auto m-2">
 						<div
-							className="h-56 flex items-center justify-center p-4  rounded-lg bg-slate-50"
+							className="h-56 flex items-center justify-center p-4  rounded-lg bg-white"
 							style={{
 								border: " 1px solid rgba(88, 80, 72, 0.3)",
-								background: "rgba(255, 255, 255, 0.6)",
 								boxShadow: " 0px 3px 0px 0px #cbc8c6",
 							}}
 						>
@@ -44,7 +43,7 @@ export default async function DetailPage({ params }: { params: any }) {
 								height={0}
 								sizes="100vw"
 								style={{ width: "auto", height: "90%" }}
-								className="bg-slate-100"
+								className="bg-white"
 							/>
 						</div>
 						<div className="text-base mt-2">

@@ -59,10 +59,10 @@ export const getDetail = async (
 };
 
 // グッズ一覧を取得
-export const getGoodsList = async (queries?: MicroCMSQueries) => {
+export const getGoodsList = async () => {
 	const listData = await client.getList<Goods>({
 		endpoint: "goods",
-		queries,
+		queries: { limit: 40 },
 	});
 
 	// データの取得が目視しやすいよう明示的に遅延効果を追加

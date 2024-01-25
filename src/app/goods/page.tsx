@@ -1,8 +1,8 @@
-"use client";
-import { getGoodsList } from "@/lib/microcms";
+import { client, getGoodsList } from "@/lib/microcms";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import "../../styles/index.css";
 
 const GoodsList = async () => {
 	const { contents } = await getGoodsList();
@@ -12,10 +12,7 @@ const GoodsList = async () => {
 	}
 
 	return (
-		<div
-			className="m-auto h-screen border px-2 py-6"
-			style={{ width: "390px", height: "100%", backgroundColor: "#F9F7F2" }}
-		>
+		<div className="m-auto h-screen border px-2 py-6 container">
 			<Link href="/">
 				<Image
 					src="/images/back.png"
@@ -31,10 +28,9 @@ const GoodsList = async () => {
 					<div className="w-2/5 flex-grow h-auto m-2" key={i}>
 						<Link href={`/goods/${item.id}`}>
 							<div
-								className="flex items-center justify-center p-4  rounded-lg bg-slate-50"
+								className="flex items-center justify-center p-4  rounded-lg bg-white"
 								style={{
 									border: " 1px solid rgba(88, 80, 72, 0.3)",
-									background: "rgba(255, 255, 255, 0.6)",
 									boxShadow: " 0px 3px 0px 0px #cbc8c6",
 								}}
 							>
@@ -45,7 +41,7 @@ const GoodsList = async () => {
 									height={100}
 									sizes="100vw"
 									style={{ width: "100px", height: "auto" }}
-									className="bg-slate-100"
+									className="bg-white"
 								/>
 							</div>
 						</Link>
@@ -61,3 +57,14 @@ const GoodsList = async () => {
 };
 
 export default GoodsList;
+
+// async function getGoodsList() {
+// 	const response = await client.getList({
+// 		customRequestInit: {
+// 			cache: "no-store",
+// 		},
+// 		endpoint: "goods",
+// 		queries: { limit: 5 },
+// 	});
+// 	return response.contents;
+// }
